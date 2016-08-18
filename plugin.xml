@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="cordova-plugin-exit" version="0.1.0">
+    <name>CDVExit</name>
+    <description>Cordova plugin to exit the iOS app</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,exit,ios</keywords>
+	<js-module src="www/exit.js" name="CDVExit">
+        <clobbers target="CDVExit"/>
+    </js-module>
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="CDVExit">
+                <param name="ios-package" value="CDVExit"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/CDVExit.h" />
+        <source-file src="src/ios/CDVExit.m" />
+    </platform>
+</plugin>
